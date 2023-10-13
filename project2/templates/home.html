@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block title %}Home{% endblock title %}Home
+{% block body %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<div class="alert alert-warning alert-dismissible fade show" role="success">
+  <strong>Hola!</strong> Django course is dropped down.<span class="badge text-bg-success">new</span>
+  <button type="button" class="btn-close" data-bs-dismiss="success" aria-label="Close"></button>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    {% for i in course %}
+      <div class="col-md-3 mb-3">
+        <div class="card" style="width: 100%;">
+          <img src="/media/{{i.image}}" class="card-img-top" alt="{{i.title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{i.title}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <p class="card-text">{{i.cate.name}}</p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-link">Buy</a>
+            <a href="#" class="card-link">Add to Cart</a>
+            <a href="#" class="card-link">Preview</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container text-center mt-4">
+  <div class="card mb-3" style="max-width: 1000rem;max-height: 500rem; margin: 0 auto;">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://plus.unsplash.com/premium_photo-1664301969414-d8435c2b91bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Original Image" width="100" height="700">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1812&q=80" class="d-block w-100" alt="Original Image" width="100" height="700">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="d-block w-100" alt="Original Image" width="100" height="700">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
